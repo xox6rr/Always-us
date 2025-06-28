@@ -880,6 +880,22 @@
       document.body.appendChild(t);
       setTimeout(() => t.remove(), 10000);
     }, 1200);
+    </script>
+
+<style>
+  .floating {
+    position: fixed;
+    top: 0;
+    font-size: 2rem;
+    animation: floatDown 10s linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  @keyframes floatDown {
+    from { top: 0; }
+    to { top: 100vh; }
+  }
+</style>
   </script>
   <footer style="
   position:fixed;
