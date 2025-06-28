@@ -861,34 +861,19 @@
   </p>
 </div>
   </section>
-
   <script>
-    setInterval(() => {
-      const h = document.createElement("div");
-      h.className = "floating";
-      h.textContent = "❤️";
-      h.style.left = Math.random() * window.innerWidth + "px";
-      document.body.appendChild(h);
-      setTimeout(() => h.remove(), 10000);
-    }, 500);
-
-    setInterval(() => {
-      const t = document.createElement("div");
-      t.className = "floating";
-      t.textContent = "🌷";
-      t.style.left = Math.random() * window.innerWidth + "px";
-      document.body.appendChild(t);
-      setTimeout(() => t.remove(), 10000);
-    }, 1200);
-    <script>
   // floating ❤️
   setInterval(() => {
     const h = document.createElement("div");
-    h.className = "floating";
     h.textContent = "❤️";
+    h.style.position = "fixed";
     h.style.left = Math.random() * window.innerWidth + "px";
-    h.style.opacity = "0.4"; // kam transparency
+    h.style.top = "100vh"; // bottom se start
     h.style.fontSize = "24px";
+    h.style.opacity = "0.4"; // kam transparency
+    h.style.pointerEvents = "none";
+    h.style.zIndex = 999;
+    h.style.animation = "floatUp 15s linear forwards";
     document.body.appendChild(h);
     setTimeout(() => h.remove(), 15000);
   }, 800);
@@ -896,16 +881,29 @@
   // floating 🌷
   setInterval(() => {
     const t = document.createElement("div");
-    t.className = "floating";
     t.textContent = "🌷";
+    t.style.position = "fixed";
     t.style.left = Math.random() * window.innerWidth + "px";
-    t.style.opacity = "0.4"; // kam transparency
+    t.style.top = "100vh"; // bottom se start
     t.style.fontSize = "24px";
+    t.style.opacity = "0.4"; // kam transparency
+    t.style.pointerEvents = "none";
+    t.style.zIndex = 999;
+    t.style.animation = "floatUp 18s linear forwards";
     document.body.appendChild(t);
-    setTimeout(() => t.remove(), 15000);
+    setTimeout(() => t.remove(), 18000);
   }, 1200);
-</script>
 
+  // animation keyframes
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes floatUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+  `;
+  document.head.appendChild(style);
+  </script>
 <style>
   .floating {
     position: fixed;
