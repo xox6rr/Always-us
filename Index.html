@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maayu 🌷🫠 Poetry</title>
+  <style>
+    body { background: pink; font-family: Arial, sans-serif; margin:0; padding:0; overflow-x:hidden; }
+    h1 { text-align:center; color:#b30059; margin:20px 0; }
+    .profile { text-align:center; margin-top:20px; }
+    .profile img { border-radius:50%; width:150px; height:150px; border:5px solid #b30059; }
+    .profile-name { font-size:1.5rem; color:#800040; margin-top:10px; }
+    .tulip-border { font-size:2rem; }
+    section { max-width:800px; margin:20px auto; background:rgba(255,255,255,0.7); border-radius:20px; padding:20px; }
+    .poem, .shayri { margin-bottom:20px; font-size:1rem; line-height:1.6; color:#4b004b; }
+    .floating { position:fixed; width:20px; height:20px; animation:float 10s linear infinite; pointer-events:none; }
+    @keyframes float { 0%{transform:translateY(100vh)translateX(0);} 100%{transform:translateY(-10vh)translateX(50vw);} }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://example.com/music.mp3" type="audio/mpeg">
+  </audio>
+  <div class="profile">
+    <div class="tulip-border">🌷🌷🌷🌷🌷</div>
+    <img src="https://drive.google.com/uc?export=view&id=1-43TG--9oSjxP24Im-OyP-c5ElYKwYZZ" alt="Maayu">
+    <div class="tulip-border">🌷🌷🌷🌷🌷</div>
+    <div class="profile-name">MY maayu</div>
+  </div>
+  <h1>Maayu 🌷🫠 Love Poetry & Shayris</h1>
+  <section id="poems">
+    <h2>Poems</h2>
+    <!-- poems will be added here -->
+  </section>
+  <section id="shayris">
+    <h2>Shayris</h2>
+    <!-- shayris will be added here -->
+  </section>
+  <script>
+    setInterval(() => { const h=document.createElement("div");h.className="floating";h.textContent="❤️";h.style.left=Math.random()*window.innerWidth+"px";document.body.appendChild(h);setTimeout(()=>h.remove(),10000); },500);
+    setInterval(() => { const t=document.createElement("div");t.className="floating";t.textContent="🌷";t.style.left=Math.random()*window.innerWidth+"px";document.body.appendChild(t);setTimeout(()=>t.remove(),10000); },1200);
+  </script>
+</body>
+</html>
