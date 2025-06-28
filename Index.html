@@ -880,21 +880,44 @@
       document.body.appendChild(t);
       setTimeout(() => t.remove(), 10000);
     }, 1200);
-    </script>
+    <script>
+  // floating ❤️
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "floating";
+    h.textContent = "❤️";
+    h.style.left = Math.random() * window.innerWidth + "px";
+    h.style.opacity = "0.4"; // kam transparency
+    h.style.fontSize = "24px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 15000);
+  }, 800);
+
+  // floating 🌷
+  setInterval(() => {
+    const t = document.createElement("div");
+    t.className = "floating";
+    t.textContent = "🌷";
+    t.style.left = Math.random() * window.innerWidth + "px";
+    t.style.opacity = "0.4"; // kam transparency
+    t.style.fontSize = "24px";
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 15000);
+  }, 1200);
+</script>
 
 <style>
   .floating {
     position: fixed;
-    top: 0;
-    font-size: 2rem;
-    animation: floatDown 20s linear forwards;
+    animation: float 15s linear infinite;
     pointer-events: none;
-    z-index:1; /*9999*/
+    z-index: 999;
   }
-  @keyframes floatDown {
-    from { top: 0; }
-    to { top: 100vh; }
+  @keyframes float {
+    0% { transform: translateY(100vh) translateX(0); }
+    100% { transform: translateY(-120vh) translateX(20vw); }
   }
+</style>
 </style>
   </script>
   <footer style="
